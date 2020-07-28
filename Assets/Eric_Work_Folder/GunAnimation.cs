@@ -15,14 +15,22 @@ public class GunAnimation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButtonDown(0))
         {
-            Gun_A.SetBool("Shoot", true);
+            
+            Gun_A.SetInteger("Shoot", 1);
+            Debug.Log("Shooting");
+        }
+
+        if (Input.GetMouseButtonUp(0))
+        {
+            Gun_A.SetInteger("Shoot", 0);
         }
 
         else
         {
-            Gun_A.SetBool("Shoot", false);
+            //Gun_A.SetInteger("Shoot", 0);
         }
+
     }
 }
