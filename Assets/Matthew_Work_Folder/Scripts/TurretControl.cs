@@ -18,10 +18,10 @@ public class TurretControl : MonoBehaviour
 
     private void Update()
     {
-        RotateTurret();
+        RotatetheTurret();
     }
 
-    private void RotateTurret()
+    private void RotatetheTurret()
     {
         if (Input.GetAxis("Horizontal") > 0)
         {
