@@ -10,11 +10,18 @@ public class TurretControl : MonoBehaviour
     public float turnSpeed;
     public float maxLeftRotate;
     public float maxRightRotate;
-    public float maxHeight;
-    public float minHeight;
+    public float minDownRotate;
+    public float maxUpRotate;
 
     private float sideAngle = 0;
-    private float verticalAngle = 0;
+    private float verticalAngle = 180;
+
+    private void Start()
+    {
+        maxLeftRotate *= -1;
+        minDownRotate += turretGun.localEulerAngles.y;
+        maxUpRotate = turretGun.localEulerAngles.y - maxUpRotate;
+    }
 
     private void Update()
     {
@@ -35,17 +42,18 @@ public class TurretControl : MonoBehaviour
 
         if (Input.GetAxis("Vertical") > 0)
         {
-            verticalAngle += turnSpeed;
+            verticalAngle -= turnSpeed;
         }
 
         if (Input.GetAxis("Vertical") < 0)
         {
-            verticalAngle -= turnSpeed;
+            verticalAngle += turnSpeed;
         }
 
-        verticalAngle = Mathf.Clamp(verticalAngle, minHeight, maxHeight);
+        verticalAngle = Mathf.Clamp(verticalAngle, maxUpRotate, minDownRotate);
         sideAngle = Mathf.Clamp(sideAngle, maxLeftRotate, maxRightRotate);
-        turretBody.eulerAngles = new Vector3(verticalAngle, sideAngle, 0);
+        turretBody.eulerAngles = new Vector3(0, sideAngle, 0);
+        turretGun.localEulerAngles = new Vector3(0, verticalAngle, 0);
     }
 
 }
