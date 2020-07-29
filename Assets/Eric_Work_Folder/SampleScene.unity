@@ -1252,6 +1252,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Plane part 3
       objectReference: {fileID: 0}
+    - target: {fileID: 8573682391343831453, guid: e80fcbd8d062c40489066cef01bc60a0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e80fcbd8d062c40489066cef01bc60a0, type: 3}
 --- !u!4 &2271368274442593601
@@ -1465,6 +1470,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Propeller
       objectReference: {fileID: 0}
+    - target: {fileID: 1859688371902060940, guid: 7fa3ddfc5f1231f4bbeb389e60ee50b7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5465754296656198505, guid: 7fa3ddfc5f1231f4bbeb389e60ee50b7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1671,6 +1681,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Plane part 4
       objectReference: {fileID: 0}
+    - target: {fileID: 5425387177716901284, guid: 067b2188367cd584682b008deac6321b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 067b2188367cd584682b008deac6321b, type: 3}
 --- !u!4 &6372897302233507869
@@ -1754,6 +1769,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Plane part 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6760577434752390260, guid: 86e9e6b4c839c46409dfa5df0c0faf56,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 86e9e6b4c839c46409dfa5df0c0faf56, type: 3}
 --- !u!33 &6592322275063881423
@@ -1783,6 +1803,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Plane part 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 812504465629810851, guid: 2f55a167f485327449ce39561a700ae4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5970352493321208926, guid: 2f55a167f485327449ce39561a700ae4,
         type: 3}
@@ -1968,6 +1993,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Plane body
+      objectReference: {fileID: 0}
+    - target: {fileID: 7115721630334592957, guid: c07c0e548ad5b8849bde7e6b6a1b8f58,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c07c0e548ad5b8849bde7e6b6a1b8f58, type: 3}
@@ -2193,6 +2223,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Plane part 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1961521153815511730, guid: 2794ba887bfbbe2459be36b54ec66622,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6694383090477761340, guid: 2794ba887bfbbe2459be36b54ec66622,
         type: 3}
