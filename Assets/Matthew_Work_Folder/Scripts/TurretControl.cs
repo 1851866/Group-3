@@ -8,6 +8,7 @@ public class TurretControl : MonoBehaviour
     public Transform turretGun;
 
     public float turnSpeed;
+    public float verticalSpeed;
     public float maxLeftRotate;
     public float maxRightRotate;
     public float minDownRotate;
@@ -42,12 +43,12 @@ public class TurretControl : MonoBehaviour
 
         if (Input.GetAxis("Vertical") > 0)
         {
-            verticalAngle -= turnSpeed;
+            verticalAngle -= verticalSpeed;
         }
 
         if (Input.GetAxis("Vertical") < 0)
         {
-            verticalAngle += turnSpeed;
+            verticalAngle += verticalSpeed;
         }
 
         verticalAngle = Mathf.Clamp(verticalAngle, maxUpRotate, minDownRotate);

@@ -194,6 +194,31 @@ PrefabInstance:
       propertyPath: m_Name
       value: Turret Parent
       objectReference: {fileID: 0}
+    - target: {fileID: 5670558180347590893, guid: 60494f0172fbe54429d81996ea42563f,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5670558180347590893, guid: 60494f0172fbe54429d81996ea42563f,
+        type: 3}
+      propertyPath: bulletSpeed
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 5670558180347590893, guid: 60494f0172fbe54429d81996ea42563f,
+        type: 3}
+      propertyPath: ShotInterval
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8234726736764153202, guid: 60494f0172fbe54429d81996ea42563f,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8396878601396896198, guid: 60494f0172fbe54429d81996ea42563f,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 60494f0172fbe54429d81996ea42563f, type: 3}
 --- !u!1 &272374383 stripped
@@ -209,7 +234,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 272374383}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1eec387bb9cd3084d8e4119b0c63444a, type: 3}
   m_Name: 
@@ -234,7 +259,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 272374383}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f65dd04534a8bb8499e1ed9d68d27e28, type: 3}
   m_Name: 
@@ -245,7 +270,7 @@ MonoBehaviour:
   firePoint1: {fileID: 1225764019}
   firePoint2: {fileID: 427193040}
   bulletSpeed: 1000
-  fireRate: 0.5
+  ShotInterval: 1
 --- !u!1 &427193039
 GameObject:
   m_ObjectHideFlags: 0
