@@ -50,7 +50,7 @@ public class Shoot : MonoBehaviour
     {
         GameObject bullet1 = Instantiate(bulletPrefab, firePoint1.position, Quaternion.identity) as GameObject;
         GameObject bullet2 = Instantiate(bulletPrefab, firePoint2.position, Quaternion.identity) as GameObject;
-        bullet1.GetComponent<Rigidbody>().AddForce(bullet1.transform.forward * bulletSpeed);
-        bullet2.GetComponent<Rigidbody>().AddForce(bullet2.transform.forward * bulletSpeed);
+        bullet1.GetComponent<Rigidbody>().AddForce(turretHead.transform.right * bulletSpeed);
+        bullet2.GetComponent<Rigidbody>().AddForce(turretHead.transform.right * bulletSpeed);
     }
 }
