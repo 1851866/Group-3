@@ -22,7 +22,7 @@ public class Shoot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButton(0) && Time.time > timeTrack + ShotInterval)
+        if (Input.GetKey(KeyCode.Space) && Time.time > timeTrack + ShotInterval)
         {
             timeTrack = Time.time + ShotInterval;
 
