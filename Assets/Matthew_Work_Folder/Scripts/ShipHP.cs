@@ -20,7 +20,10 @@ public class ShipHP : MonoBehaviour
     void Update()
     {
         //Debug.Log(currentHealth);
-        hpText.text = "HP: " + currentHealth;
+        if (hpText != null)
+        {
+            hpText.text = "HP: " + currentHealth;
+        }
     }
 
     private void OnTriggerEnter(Collider other)
