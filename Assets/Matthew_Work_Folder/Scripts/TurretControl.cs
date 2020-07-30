@@ -17,6 +17,8 @@ public class TurretControl : MonoBehaviour
     private float sideAngle = 0;
     private float verticalAngle = 180;
 
+    public AudioSource rotateSound;
+
     private void Start()
     {
         maxLeftRotate *= -1;
@@ -34,21 +36,30 @@ public class TurretControl : MonoBehaviour
         if (Input.GetAxis("Horizontal") > 0)
         {
             sideAngle += turnSpeed;
+            rotateSound.enabled = true;
         }
 
         if (Input.GetAxis("Horizontal") < 0)
         {
             sideAngle -= turnSpeed;
+            rotateSound.enabled = true;
         }
 
         if (Input.GetAxis("Vertical") > 0)
         {
             verticalAngle -= verticalSpeed;
+            rotateSound.enabled = true;
         }
 
         if (Input.GetAxis("Vertical") < 0)
         {
             verticalAngle += verticalSpeed;
+            rotateSound.enabled = true;
+        } 
+
+        if(Input.GetAxis("Horizontal") == 0 && Input.GetAxis("Vertical") == 0)
+        {
+            rotateSound.enabled = false;
         }
 
         verticalAngle = Mathf.Clamp(verticalAngle, maxUpRotate, minDownRotate);

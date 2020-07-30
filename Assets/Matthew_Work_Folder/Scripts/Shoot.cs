@@ -10,6 +10,8 @@ public class Shoot : MonoBehaviour
     public Transform firePoint1;
     public Transform firePoint2;
 
+    public AudioSource shotSound;
+
     public float bulletSpeed;
     //public float fireRate;
 
@@ -19,10 +21,15 @@ public class Shoot : MonoBehaviour
     public float ShotInterval = 1f;
     float timeTrack;
 
+    private void Start()
+    {
+
+    }
+
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButton(0) && Time.time > timeTrack + ShotInterval)
+        if ((Input.GetKey(KeyCode.Space)|| Input.GetMouseButton(0)) && Time.time > timeTrack + ShotInterval)
         {
             timeTrack = Time.time + ShotInterval;
 
@@ -66,6 +73,7 @@ public class Shoot : MonoBehaviour
         GameObject bullet2 = Instantiate(bulletPrefab, firePoint2.position, firePoint2.rotation) as GameObject; //Quaternion.identity) as GameObject;
         bullet1.GetComponent<Rigidbody>().AddForce(turretHead.transform.right * -bulletSpeed);
         bullet2.GetComponent<Rigidbody>().AddForce(turretHead.transform.right * -bulletSpeed);
+        shotSound.Play();
 
         Destroy(bullet1, 6);
         Destroy(bullet2, 6);
