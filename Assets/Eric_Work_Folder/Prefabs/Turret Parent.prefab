@@ -353,8 +353,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   turretBody: {fileID: 4820800192789199948}
   turretGun: {fileID: 4820800192239130051}
-  turnSpeed: 0.1
-  verticalSpeed: 0
+  turnSpeed: 0.2
+  verticalSpeed: 0.1
   maxLeftRotate: 45
   maxRightRotate: 45
   minDownRotate: 0

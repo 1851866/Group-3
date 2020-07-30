@@ -33,6 +33,7 @@ public class PlaneMovement : MonoBehaviour
             //GameObject.Instantiate(ExplosionObject, this.transform);
             //boomSound.Play();
             Destroy(this.gameObject);
+            Score_Tracker_Script.IncreaseScore();
         }
     }
 }

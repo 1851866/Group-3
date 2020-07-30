@@ -4,65 +4,39 @@ using UnityEngine;
 
 public class Camera_Script : MonoBehaviour
 {
-    public float _MouseSensitivity;
-    public float _LerpTime;
-
-    public Transform Player_Transform;
-
-    float xRot;
-
-    public GameObject Player;
-    public bool isCrounching;
-
-   
 
     void Start()
     {
-        Player_Transform = GameObject.FindGameObjectWithTag("Player").transform;
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
-        Player = GameObject.FindGameObjectWithTag("Player");
+        Debug.Log(transform.localPosition.y);
     }
 
-    
     void Update()
     {
-        float mouseX = Input.GetAxis("Mouse X") * _MouseSensitivity * Time.deltaTime;
-        float mouseY = Input.GetAxis("Mouse Y") * _MouseSensitivity * Time.deltaTime;
-
-        xRot -= mouseY;
-        xRot = Mathf.Clamp(xRot, -90f, 90f);
-
-        transform.localRotation = Quaternion.Euler(xRot, 0f, 0f);
-        Player_Transform.Rotate(Vector3.up * mouseX);
-
-        //isCrounching = Player.GetComponent<Player_Controller_Script>().isCrouching;
-
-        if (isCrounching)
+        if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            transform.localPosition = Vector3.Lerp(transform.localPosition, new Vector3(transform.localPosition.x,0,transform.localPosition.z), _LerpTime * Time.deltaTime);
-                
+            Debug.Log("One");
+           StartCoroutine(CameraShake(0.2f, 1f));
         }
-        else
-        {
-            transform.localPosition = Vector3.Lerp(transform.localPosition, new Vector3(transform.localPosition.x, 1.68f, transform.localPosition.z), _LerpTime * Time.deltaTime);
-        }
+    }
 
-        ChangeMouseSensitivity();
+    public void CallShake(float _duration, float _magnitude)
+    {
+        StartCoroutine(CameraShake(_duration, _magnitude));
     }
 
 
 
     public IEnumerator CameraShake (float _duration, float _magnitude)
     {
+        Debug.Log("Shake");
         Vector3 originalPos = transform.localPosition;
 
         float elapsed = 0.0f;
 
         while(elapsed < _duration)
         {
-            float x = Random.Range(-1f, 1f) * _magnitude;
-            float y = Random.Range(-1f, 1f) * _magnitude;
+            float x = Random.Range(transform.localPosition.x-0.1f, transform.localPosition.x + 0.1f) * _magnitude;
+            float y = Random.Range(transform.localPosition.y - 0.1f, transform.localPosition.y + 0.1f) * _magnitude;
 
             transform.localPosition = new Vector3(x, y, originalPos.z);
 
@@ -74,16 +48,4 @@ public class Camera_Script : MonoBehaviour
         transform.localPosition = originalPos;
     }
 
-
-    public void ChangeMouseSensitivity()
-    {
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            _MouseSensitivity += 10;
-        }
-        if (Input.GetKeyDown(KeyCode.Y))
-        {
-            _MouseSensitivity -= 10;
-        }
-    }
 }
