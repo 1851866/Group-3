@@ -19,7 +19,7 @@ public class ShipHP : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(currentHealth);
+        //Debug.Log(currentHealth);
         hpText.text = "HP: " + currentHealth;
     }
 
@@ -28,6 +28,7 @@ public class ShipHP : MonoBehaviour
         if(other.tag == "Enemy")
         {
             currentHealth--;
+            Destroy(other.gameObject);
         }
     }
 }
