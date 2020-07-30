@@ -10,6 +10,7 @@ public class PlaneMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        targetPath = GameObject.FindGameObjectWithTag("Target");
         transform.LookAt(targetPath.transform.position);
     }
 
