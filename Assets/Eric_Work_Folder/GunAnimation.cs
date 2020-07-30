@@ -12,12 +12,14 @@ public class GunAnimation : MonoBehaviour
     void Start()
     {
         Gun_A = gameObject.GetComponent<Animator>();
+        Flash1.Stop();
+        Flash2.Stop();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0)|| Input.GetKeyDown(KeyCode.Space))
         {
             Flash1.Play();
             Flash2.Play();
@@ -25,8 +27,10 @@ public class GunAnimation : MonoBehaviour
             //Debug.Log("Shooting");
         }
 
-        if (Input.GetMouseButtonUp(0))
+        if (Input.GetMouseButtonUp(0)|| Input.GetKeyUp(KeyCode.Space))
         {
+            Flash1.Stop();
+            Flash2.Stop();
             Gun_A.SetInteger("Shoot", 0);
         }
 
